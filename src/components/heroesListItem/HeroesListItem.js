@@ -1,7 +1,4 @@
 
-
-
-
 const HeroesListItem = ({ id, name, description, element, setStateDelete }) => {
 
     let elementClassName;
@@ -24,15 +21,10 @@ const HeroesListItem = ({ id, name, description, element, setStateDelete }) => {
     }
 
     const closeHero = (e) => {
-
         const deleteHero = e.target.id
-        console.log(deleteHero);
         fetch(`http://localhost:3001/heroes/${deleteHero}`, { method: 'DELETE' })
             .then(setStateDelete(false))
-
     }
-
-
 
     return (
         <li key={id}

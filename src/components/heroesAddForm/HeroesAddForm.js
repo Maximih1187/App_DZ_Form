@@ -12,19 +12,15 @@
 
 //import { useDispatch } from "react-redux";
 //import { heroesFetched } from '../../actions';
-import { useCallback, useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { useState } from "react";
+
 
 
 const HeroesAddForm = () => {
     const [name, setName] = useState('')
     const [text, setText] = useState('')
     const [element, setElement] = useState('')
-    // const dispatch = useDispatch()
     const { v4: uuidv4 } = require('uuid');
-
-
-
 
     const hendelSubmit = () => {
         const res = {
