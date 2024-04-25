@@ -15,7 +15,6 @@
 import { useState } from "react";
 
 
-
 const HeroesAddForm = () => {
     const [name, setName] = useState('')
     const [text, setText] = useState('')

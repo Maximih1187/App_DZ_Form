@@ -10,6 +10,12 @@ export const heroesFetched = (heroes) => {
         payload: heroes
     }
 }
+export const heroesFilter = (heroes) => {
+    return {
+        type: 'HEROES_FILTER',
+        payload: heroes
+    }
+}
 
 export const heroesFetchingError = () => {
     return {
