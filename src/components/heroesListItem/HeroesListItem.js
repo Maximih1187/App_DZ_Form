@@ -19,7 +19,6 @@ const HeroesListItem = ({ id, name, description, element, setStateDelete }) => {
         default:
             elementClassName = 'bg-warning bg-gradient';
     }
-
     const closeHero = (e) => {
         const deleteHero = e.target.id
         fetch(`http://localhost:3001/heroes/${deleteHero}`, { method: 'DELETE' })
