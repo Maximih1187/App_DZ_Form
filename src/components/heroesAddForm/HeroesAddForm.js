@@ -1,11 +1,16 @@
 
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { heroesAddFetches } from './heroesAddSlice'
+
+
 
 const HeroesAddForm = () => {
     const [name, setName] = useState('')
     const [text, setText] = useState('')
     const [element, setElement] = useState('')
     const { v4: uuidv4 } = require('uuid');
+    const dispatch = useDispatch()
 
     const hendelSubmit = () => {
         const res = {
@@ -13,16 +18,9 @@ const HeroesAddForm = () => {
             name: name,
             description: text,
             element: element,
-        }
-        fetch("http://localhost:3001/heroes", {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(res)
-        })
-    }
+        };
+        dispatch(heroesAddFetches(res))
+    };
 
     return (
         <form onSubmit={hendelSubmit} className="border p-4 shadow-lg rounded">

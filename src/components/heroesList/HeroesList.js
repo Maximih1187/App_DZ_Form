@@ -3,26 +3,38 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchHeroes } from './heroesSlice';
+import { fetchHeroes, selectAll } from './heroesSlice';
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from '../spinner/Spinner';
+import { createSelector } from '@reduxjs/toolkit';
 
-// Задача для этого компонента:
-// При клике на "крестик" идет удаление персонажа из общего состояния
-// Усложненная задача:
-// Удаление идет и с json файла при помощи метода DELETE
 
 const HeroesList = () => {
+    const { heroesLoadingStatus } = useSelector(state => state.heroes);
+
+    const filterHeroesSelector = createSelector(
+        (state) => state.filter.category,
+        selectAll,
+        (filter, heroes) => {
+            if (filter === 'all') {
+                return heroes;
+            } else {
+                return heroes.filter(item => item.element === filter)
+            }
+        }
+    )
+
     const [stateDelete, setStateDelete] = useState(false);
-    const { heroes, heroesLoadingStatus, } = useSelector(state => state.heroes);
-    const { filterHeroes } = useSelector(state => state.filter)
     const dispatch = useDispatch();
 
+
+    const res = useSelector(filterHeroesSelector)
     useEffect(() => {
         setStateDelete(true);
         dispatch(fetchHeroes());
 
     }, [stateDelete]);
+
 
 
     if (heroesLoadingStatus === "loading") {
@@ -32,6 +44,7 @@ const HeroesList = () => {
     };
 
     const renderHeroesList = (arr) => {
+
         if (arr.length === 0) {
             return <h5 className="text-center mt-5">Героев пока нет</h5>
         }
@@ -40,8 +53,10 @@ const HeroesList = () => {
         })
     };
 
-    const res = filterHeroes.length === 0 ? heroes : filterHeroes;
+    //const res = filterHeroes.length === 0 ? selectAll : filterHeroes;
     const elements = renderHeroesList(res);
+
+
     return (
         <ul>
             {elements}
