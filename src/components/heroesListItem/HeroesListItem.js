@@ -21,7 +21,7 @@ const HeroesListItem = ({ id, name, description, element, setStateDelete }) => {
     }
 
     const closeHero = (e) => {
-        const deleteHero = e.target.id
+        const deleteHero = e.target.id;
         fetch(`http://localhost:3001/heroes/${deleteHero}`, { method: 'DELETE' })
             .then(setStateDelete(false))
 

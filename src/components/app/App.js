@@ -1,20 +1,22 @@
-import HeroesList from '../heroesList/HeroesList';
-import HeroesAddForm from '../heroesAddForm/HeroesAddForm';
-import HeroesFilters from '../heroesFilters/HeroesFilters';
-
+import { Header, Footer, Hi, Main, FormRegisr, About } from '../pages/ImportPages'
+import { Routes, Route } from 'react-router-dom';
 import './app.scss';
 
 const App = () => {
-    
+
     return (
         <main className="app">
-            <div className="content">
-                <HeroesList/>
-                <div className="content__interactive">
-                    <HeroesAddForm/>
-                    <HeroesFilters/>
-                </div>
+            <Header />
+            <div className='content'>
+                <Routes>
+                    <Route path='/' element={<Main />} />
+                    <Route path='/hi' element={<Hi />} />
+                    <Route path='/about' element={<About />} />
+                    <Route path='/register' element={<FormRegisr />} />
+                </Routes>
             </div>
+
+            <Footer />
         </main>
     )
 }

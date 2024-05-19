@@ -23,6 +23,12 @@
       "name": "asfsaf",
       "description": "egge",
       "element": "water"
+    },
+    {
+      "id": "95d2b8f4-71c5-45d6-8652-3b971bacaaf4",
+      "name": "sfsf",
+      "description": "ssfg",
+      "element": "fire"
     }
   ],
   "filters": [
@@ -55,6 +61,18 @@
       "key": "earth",
       "className": "btn btn-secondary",
       "num": "929829"
+    }
+  ],
+  "users": [
+    {
+      "id": "ee14",
+      "login": "Сашка Хитрый Хуй",
+      "password": "11"
+    },
+    {
+      "id": "bfeb",
+      "login": "Maximih1187",
+      "password": "11"
     }
   ]
 }

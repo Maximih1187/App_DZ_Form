@@ -21,21 +21,18 @@ const heroesSlice = createSlice({
       name: 'heroes',
       initialState,
       reducers: {
-            // heroesFetching: state => { state.heroesLoadingStatus = 'loading' },
-            // heroesFetched: (state, action) => {
-            //       state.heroesLoadingStatus = 'idle';
-            //       state.heroes = action.payload
-            // },
-            // heroesFetchingError: state => { state.heroesLoadingStatus = 'error' },
       },
       extraReducers: (builder) => {
             builder
                   .addCase(fetchHeroes.pending, state => { state.heroesLoadingStatus = 'loading' })
+
                   .addCase(fetchHeroes.fulfilled, (state, action) => {
                         state.heroesLoadingStatus = 'idle';
                         heroesArapter.setAll(state, action.payload)
                   })
+
                   .addCase(fetchHeroes.rejected, state => { state.heroesLoadingStatus = 'error' })
+
                   .addDefaultCase(() => { })
       }
 });

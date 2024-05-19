@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-
 const initialState = {
       category: "all",
       stateButtons: []
@@ -20,15 +19,16 @@ export const buttonFilterFetch = createAsyncThunk(
                   return rejectWithValue(error.massage)
             }
       }
-)
+);
+
+
+
 
 const filterSlice = createSlice({
       name: 'filter',
       initialState,
       reducers: {
             categoryFilter: (state, action) => { state.category = action.payload },
-
-
       },
       extraReducers: (builder) => {
             builder
@@ -36,7 +36,7 @@ const filterSlice = createSlice({
                         state.stateButtons = action.payload
                   })
       }
-})
+});
 
 const { actions, reducer } = filterSlice;
 

@@ -1,6 +1,6 @@
 
-import { useEffect } from 'react';
-import { useState } from 'react';
+
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchHeroes, selectAll } from './heroesSlice';
@@ -27,8 +27,10 @@ const HeroesList = () => {
     const [stateDelete, setStateDelete] = useState(false);
     const dispatch = useDispatch();
 
-
     const res = useSelector(filterHeroesSelector)
+
+
+
     useEffect(() => {
         setStateDelete(true);
         dispatch(fetchHeroes());
@@ -43,6 +45,8 @@ const HeroesList = () => {
         return <h5 className="text-center mt-5">Ошибка загрузки</h5>
     };
 
+
+
     const renderHeroesList = (arr) => {
 
         if (arr.length === 0) {
@@ -53,8 +57,9 @@ const HeroesList = () => {
         })
     };
 
-    //const res = filterHeroes.length === 0 ? selectAll : filterHeroes;
+
     const elements = renderHeroesList(res);
+
 
 
     return (

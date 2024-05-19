@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { categoryFilter, buttonFilterFetch } from '../heroesFilters/filterSlice';
 
 const HeroesFilters = () => {
-    // const { heroes } = useSelector(state => state.heroes)
+
     const { category, stateButtons } = useSelector(state => state.filter)
     const dispath = useDispatch()
 

@@ -26,10 +26,7 @@ const heroesAddSlise = createSlice({
       reducers: {
             heroesAddFetch: (state, action) => { state.res = action.payload }
       },
-      // extraReducers: (builder) => {
-      //       builder
-      //             .addCase(heroesAddFetches.rejected, state => { state.statusAddHeroes = 'ok' })
-      // }
+
 })
 
 
