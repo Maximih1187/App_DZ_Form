@@ -84,7 +84,7 @@ const About = () => {
 
 
 
-   //mekfekfkl
+   //100
 
 
    // if (chars.length < 1) {
