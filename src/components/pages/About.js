@@ -12,8 +12,8 @@ const About = () => {
    //const refer = useRef([]);
    const { chars, char, idDescr, shoppingCart } = useSelector(state => state.aboutSlice)
    const statusChar = useSelector(state => state.aboutSlice.statusChar)
-   //const urlAllChars = "https://gateway.marvel.com:443/v1/public/characters?limit=25&apikey=4ca4e0f7a1c0e3bdc1240a5027d68f5f"
-
+   const urlAllChars = "https://gateway.marvel.com:443/v1/public/characters?limit=25&apikey=4ca4e0f7a1c0e3bdc1240a5027d68f5f"
+   console.log(char);
    console.log('render');
 
    // const fetchServer = useMemo(() => {
@@ -84,7 +84,7 @@ const About = () => {
 
 
 
-
+   //mekfekfkl
 
 
    // if (chars.length < 1) {
@@ -106,9 +106,6 @@ const About = () => {
                {statusChar === "Loading" ? <Spinner /> : <img className='about__description-imges' src={src} alt="" />}
             </div>
          </div>
-         {/* <div className='about__counter'>
-            {countChar}
-         </div> */}
       </div>
    );
 }

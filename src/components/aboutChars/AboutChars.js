@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import '../pages/scssPages/about.scss'
 import Spinner from '../spinner/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchChars, fetchChar, getIdDescription, fetchShoppingCart, getShoppingCart } from '../pages/slicePages/aboutSlice';
 import { useRef, useMemo, useState } from 'react';
+
+
+
+
 
 
 const AboutChars = () => {
@@ -19,6 +23,9 @@ const AboutChars = () => {
   const fetchServer = useMemo(() => {
     dispatch(fetchChars(urlAllChars))
   }, [])
+
+
+
 
 
   const charsq = (e) => {
@@ -57,14 +64,17 @@ const AboutChars = () => {
     // const activeClass = document.querySelector(".about__description");
     // activeClass.classList.add('activer')
   }
-  return (
-    <div>
-      {chars.length < 1 ? <Spinner /> : <div>
+
+
+  const renderChar = useCallback(() => {
+    return (
+      chars.length < 1 ? <Spinner /> : <div>
         {
           chars.map((item, i) => {
             return (
               <li ref={(el) => (refer.current[i] = el)}
                 onClick={(e) => {
+                  dispatch(fetchChar(+e.target.id));
                   focuseItem(i, e)
                 }}
                 key={i}
@@ -91,7 +101,15 @@ const AboutChars = () => {
           })
         }
       </div>
-      }
+    )
+  }, [chars])
+
+
+
+
+  return (
+    <div>
+      {renderChar()}
     </div>
   );
 }

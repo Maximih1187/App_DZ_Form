@@ -1,4 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, getState } from "@reduxjs/toolkit";
+import { useLinkClickHandler } from "react-router-dom";
 // const _apiKey = "4ca4e0f7a1c0e3bdc1240a5027d68f5f";
 // const _apiBase = "https://gateway.marvel.com:443/v1/public/";
 
@@ -7,7 +8,9 @@ export const fetchChars = createAsyncThunk(
 
       async function (url, rejectWithValue) {
 
+
             try {
+
                   const response = await fetch(url)
                   console.log(response);
                   if (!response.ok) {
