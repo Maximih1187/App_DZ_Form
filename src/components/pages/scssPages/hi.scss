@@ -16,6 +16,11 @@
       flex-wrap: wrap;
 
 }
+.hi__shoppingcart-empty{
+      padding: 50px;
+      font-size: 40px;
+      margin-left:5vw;
+}
 .hi__shoppingcart-list{
       margin: 30px;
       width: 900px;
@@ -129,4 +134,27 @@ background: #c30a357a;
       border-radius: 10px;
       font-size: 25px;
       box-shadow: 7px 12px 18px 4px rgba(208, 78, 119, 0.1);
+}
+.hi__shoppingcart-delete{
+      width: 40px;
+      height: 40px;
+      font-size: 23px;
+      cursor: pointer;
+
+      //display: flex;
+      //align-items:center;
+      //justify-content: center;
+
+}
+.hi__shoppingcart-delete-span1{
+      width: 2px;
+      height: 20px;
+      border:2px solid red;
+      rotate: 135deg;
+}
+.hi__shoppingcart-delete-span2{
+      width: 2px;
+      height: 20px;
+      border:2px solid red;
+      rotate: 45deg;
 }

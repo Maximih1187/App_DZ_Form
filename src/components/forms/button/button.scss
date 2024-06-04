@@ -1,0 +1,15 @@
+.button{
+      margin-top: 10px;
+      padding: 12px 30px;
+      background: #345fed;
+      border:0px;
+      border-radius:15px;
+      font-size: 18px;
+      color:azure;
+       box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      transition: all .25s;
+      &:hover{
+             background: #345fedaf;
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+      }
+}

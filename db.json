@@ -23,12 +23,6 @@
       "name": "asfsaf",
       "description": "egge",
       "element": "water"
-    },
-    {
-      "id": "95d2b8f4-71c5-45d6-8652-3b971bacaaf4",
-      "name": "sfsf",
-      "description": "ssfg",
-      "element": "fire"
     }
   ],
   "filters": [
@@ -73,6 +67,53 @@
       "id": "bfeb",
       "login": "Maximih1187",
       "password": "11"
+    },
+    {
+      "id": "92be",
+      "login": "Maximih1187",
+      "password": "11801987Mn"
+    },
+    {
+      "id": "4497",
+      "login": "Maximih1187",
+      "password": "11081987Mn"
+    },
+    {
+      "id": "70a1",
+      "login": "maximih1187",
+      "password": "11081987Mn"
+    },
+    {
+      "id": "a4d1",
+      "login": "maximih1187",
+      "password": "11801987Mn"
+    }
+  ],
+  "stateDisable": [
+    {
+      "id": "1011334",
+      "counter": 1,
+      "disabled": false
+    },
+    {
+      "id": "1017100",
+      "counter": 1,
+      "disabled": false
+    },
+    {
+      "id": "1011334",
+      "counter": 1,
+      "disabled": false
+    },
+    {
+      "id": "1017100",
+      "counter": 1,
+      "disabled": false
+    },
+    {
+      "id": "1009144",
+      "counter": 1,
+      "disabled": false
     }
   ]
 }
