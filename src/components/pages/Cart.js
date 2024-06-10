@@ -9,7 +9,6 @@ const Cart = (props) => {
 
 	const dispatch = useDispatch()
 	const { v4: uuidv4 } = require('uuid');
-	//const shoppingCart = useSelector(state => state.aboutSlice.shoppingCart)
 	const [count, setCount] = useState(1)
 
 
