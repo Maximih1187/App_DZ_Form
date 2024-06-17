@@ -6,7 +6,6 @@ export const fetchChars = createAsyncThunk(
       'aboutSlice/fetchChars',
       async function (url, { rejectWithValue }) {
 
-
             try {
                   const response = await fetch(url)
 
@@ -64,6 +63,24 @@ const initialState = {
       shoppingCart: [],
 
 }
+// const slice = ({
+//       name: "",
+//       initialState,
+//       reducer: {},
+//       extraReducers: (builder) => {
+//             builder
+//                   .addCase(name.fulfilled, ()=>{
+
+//                   })
+//                   .addCase(name.fulfilled, ()=>{
+
+//                   })
+//                   .addCase(name.fulfilled, ()=>{
+
+//                   })
+
+//       }
+// })
 
 const aboutSlice = createSlice({
       name: 'aboutSlice',

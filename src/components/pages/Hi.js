@@ -8,6 +8,11 @@ const Hi = () => {
 
   //const dispatch = useDispatch()
   const shoppingCart = useSelector(state => state.aboutSlice.shoppingCart)
+
+
+
+
+
   // const [stat, setStat] = useState([])
 
   // useEffect(() => {
@@ -28,7 +33,8 @@ const Hi = () => {
             Список пуст!! Добавь в карзину товар!
           </div> :
           shoppingCart.map((item, i) => {
-            return <Cart key={i} item={item} />
+
+            return <Cart key={item.id} item={item} />
           })}
       </ul>
     </div>

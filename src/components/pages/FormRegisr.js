@@ -6,6 +6,8 @@ import { sendingfetchForm, fetchDbFilter, onToggleAuthorization } from './sliceP
 //import { Formik, Form, Field, ErrorMessage, useField } from 'formik';
 import * as Yup from "yup"
 import Fofms from '../forms/Forms';
+import Elevator from '../elevator/Elevator';
+
 
 
 
@@ -13,12 +15,8 @@ import Fofms from '../forms/Forms';
 const FormRegisr = () => {
 
       const dispatch = useDispatch();
-
-
       const [login, setFormValueLogin] = useState('');
       const [password, setFormValuePassword] = useState('');
-
-
       const [loginDirty, setLoginDirty] = useState(false)
       const [passwordDirty, setPasswordDirty] = useState(false)
       const [loginError, setLoginError] = useState("login не может быть пустым")
@@ -28,9 +26,6 @@ const FormRegisr = () => {
       const [loginRegister, setloginRegister] = useState()
       const [resAuthorization, setResAuthorization] = useState()
       const { registerObj, stateAuthorization } = useSelector(state => state.formRegisterSlice)
-
-
-
 
 
       const [checked, setChecked] = useState(false)
@@ -122,6 +117,10 @@ const FormRegisr = () => {
             <>
 
                   <div className='wrapper__register'>
+
+
+                        <Elevator />
+
                         <Fofms />
                         {!stateAuthorization[0] ? <div className='form_registr'>
                               <h1>{optionH1}</h1>

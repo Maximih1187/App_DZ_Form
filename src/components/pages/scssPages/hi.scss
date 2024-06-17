@@ -158,3 +158,27 @@ background: #c30a357a;
       border:2px solid red;
       rotate: 45deg;
 }
+.hi__shoppingcart-price{
+      width: 150px;
+      height: 60px;
+      //border: 1px dashed rgba(82, 82, 82, 0.59);
+      font-size: 30px;
+      color:rgb(96, 82, 28);
+      margin: 15px;
+      display: flex;
+      background: #e60f6c34;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      box-shadow: 7px 12px 18px 4px rgba(34, 60, 80, 0.385);
+      transition: all .3s;
+      cursor: pointer;
+
+      &:hover{
+           border:1px dashed rgba(24, 68, 173, 0.377);
+             box-shadow: 7px 12px 18px 4px rgba(34, 60, 80, 0.486);
+      }
+}
+.hi__shoppingcart-price:after {
+	content:'\20BD';
+}
